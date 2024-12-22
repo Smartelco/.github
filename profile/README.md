@@ -242,25 +242,18 @@ Examples:
 
 ## 💬 Commit Guidelines
 
-### Commit Message Format
+### Commit Message Structure
+
+#### Basic Format
 ```
-[type]: Brief description
+[type]: Brief description #issue-number
 
 [Optional detailed description]
 
 [Optional footer]
-
-Examples:
-✅ feat: Add user authentication system
-✅ fix: Resolve token expiration issue
-✅ docs: Update API documentation
-
-❌ Updated code
-❌ Fixed stuff
-❌ New feature
 ```
 
-### Commit Types
+#### Commit Types
 ```
 🚀 feat     : New feature
 🐛 fix      : Bug fix
@@ -272,11 +265,149 @@ Examples:
 🛠️ chore    : Maintenance tasks
 ```
 
+### Examples with Issue References
+
+#### ✅ Good Examples
+```
+🚀 feat: Add user authentication system #123
+[Optional] Implements JWT-based authentication with refresh tokens
+- Add token generation
+- Add token validation
+- Add refresh mechanism
+
+🐛 fix: Resolve token expiration issue fixes #456
+Updates token validation to handle timezone differences
+
+📚 docs: Update API documentation closes #789
+Complete documentation for authentication endpoints
+
+♻️ refactor: Optimize database queries ref #101 #102
+Improved query performance for user lookup operations
+
+🧪 test: Add integration tests for auth system #202
+Added comprehensive test suite for authentication flow
+```
+
+#### ❌ Bad Examples
+```
+Updated code #123                  // Missing type, not descriptive
+fix: Fixed authentication stuff    // Not imperative mood
+feat: Auth implementation         // Too vague, no issue reference
+feature: Added user auth #123     // Wrong type format
+docs: Updating API docs closes#456 // No space before issue number
+```
+
+### Issue Reference Keywords
+
+#### Closing Issues
+```
+fixes #123     // Will close issue when merged
+closes #123    // Will close issue when merged
+resolves #123  // Will close issue when merged
+
+Example:
+🐛 fix: Resolve null pointer exception fixes #123
+```
+
+#### Referencing Issues
+```
+ref #123      // Reference without closing
+see #123      // Reference without closing
+
+Example:
+🚀 feat: Begin authentication implementation ref #123
+```
+
 ### Best Practices
-1. Keep commits atomic and focused
-2. Write clear, descriptive messages
-3. Reference issues in commit messages
-4. Use imperative mood (e.g., "Add" not "Added")
+
+#### 1. Atomic Commits
+- One logical change per commit
+- Makes reviews easier
+- Simplifies rollbacks if needed
+
+#### 2. Clear Descriptions
+- Use imperative mood ("Add" not "Added")
+- Be specific about what changed
+- Include context if needed
+
+#### 3. Issue References
+- Always include issue number for trackability
+- Use appropriate closing keywords when applicable
+- Multiple issues should be space-separated
+
+#### 4. Structured Format
+```
+[type]: Action description #issue-number
+
+Why:
+- Reason for change
+- Context if needed
+
+What:
+- Specific change 1
+- Specific change 2
+
+Example:
+🚀 feat: Implement user roles system #123
+
+Why:
+- Required for permission management
+- Supports upcoming features
+
+What:
+- Add role model and migration
+- Implement role assignment
+- Add role validation middleware
+```
+
+### Common Patterns
+
+#### Feature Development
+```
+feature/123-user-auth
+
+🚀 feat: Initialize user authentication structure #123
+🚀 feat: Add token generation and validation #123
+🧪 test: Add authentication unit tests #123
+📚 docs: Add authentication API documentation #123
+```
+
+#### Bug Fixing
+```
+bugfix/456-token-expiration
+
+🐛 fix: Add token validation check fixes #456
+🧪 test: Add expiration test cases #456
+```
+
+#### Documentation
+```
+docs/789-api-docs
+
+📚 docs: Add authentication endpoints documentation #789
+📚 docs: Add request/response examples closes #789
+```
+
+### Tips
+1. Review your commits before pushing
+2. Use Git hooks to enforce commit message format
+3. Keep commit history clean and meaningful
+4. Link related issues and PRs in commit messages
+
+### Git Commands for Better Commits
+```bash
+# Amend last commit message
+git commit --amend -m "🚀 feat: Better description #123"
+
+# Interactive rebase to clean up commits
+git rebase -i HEAD~3
+
+# Add more changes to last commit
+git commit --amend --no-edit
+
+# View commit history with graph
+git log --graph --oneline
+```
 
 ---
 
