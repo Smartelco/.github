@@ -96,7 +96,7 @@ repository/
    - Upcoming features
    - Planned improvements
    
-2. 🎯 Sprint Backlog
+2. 🎯 Todo
    - Current sprint tasks
    - Prioritized items
    
