@@ -292,8 +292,8 @@ Added comprehensive test suite for authentication flow
 ```
 Updated code #123                  // Missing type, not descriptive
 fix: Fixed authentication stuff    // Not imperative mood
-feat: Auth implementation         // Too vague, no issue reference
-feature: Added user auth #123     // Wrong type format
+feat: Auth implementation          // Too vague, no issue reference
+feature: Added user auth #123      // Wrong type format
 docs: Updating API docs closes#456 // No space before issue number
 ```
 
