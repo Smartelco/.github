@@ -163,6 +163,49 @@ Environment:
 [Screenshots, diagrams, or additional information]
 ```
 
+## 🔄 Pull Request Process
+
+### PR Naming Convention
+```
+[type]: Brief description (#issue-number)
+
+Examples:
+- feat: Add user authentication (#123)
+- fix: Resolve token expiration (#456)
+```
+
+### PR Template
+```markdown
+### 🎯 Purpose
+[Brief description of the changes]
+
+### 🔄 Changes Made
+- Change 1
+- Change 2
+- Change 3
+
+### 🧪 Testing
+- [ ] Unit tests added
+- [ ] Integration tests updated
+- [ ] Manual testing completed
+
+### 📝 Documentation
+- [ ] Code comments updated
+- [ ] API docs updated
+- [ ] README updated if needed
+
+### 🔍 Review Checklist
+- [ ] Code follows style guidelines
+- [ ] No unused imports/variables
+- [ ] Error handling implemented
+- [ ] Logging added where necessary
+
+### 📸 Screenshots (if applicable)
+[Add screenshots here]
+
+Fixes #[issue-number]
+```
+
 ---
 
 # Development Workflow SOP
@@ -226,7 +269,14 @@ Examples:
 ♻️ refactor : Code restructure
 ⚡ perf     : Performance
 🧪 test     : Testing
+🛠️ chore    : Maintenance tasks
 ```
+
+### Best Practices
+1. Keep commits atomic and focused
+2. Write clear, descriptive messages
+3. Reference issues in commit messages
+4. Use imperative mood (e.g., "Add" not "Added")
 
 ---
 
