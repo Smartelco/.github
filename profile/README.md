@@ -537,6 +537,7 @@ Post-Release:
 # Additional Resources
 
 ## 📚 Documentation Links
+- [Git Workflow](https://github.com/Smartelco/.github/blob/main/documentation/git-workflow.md)
 - [Detailed Setup Guide](./docs/setup/README.md)
 - [API Documentation](./docs/api/README.md)
 - [Architecture Guide](./docs/architecture/README.md)
