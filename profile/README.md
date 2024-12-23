@@ -60,9 +60,148 @@ Smartelco is a technology organization specializing in workforce management solu
 ## 🎯 Development Philosophy
 - Clean and maintainable code
 - Comprehensive documentation
-- Test-driven development
-- Security-first approach
 
+---
+
+# 🎯 Development Approach 
+
+## Tracer Bullet Development
+
+![](https://th.bing.com/th/id/OIP.lJ3jWd9YD1gUNpPwkCgOXwHaFi?rs=1&pid=ImgDetMain)
+
+### Overview
+Tracer Bullet Development is a methodological approach that focuses on building end-to-end functionality through all system layers (from UI to database) with minimal initial features. Like a tracer bullet that helps a gunner visualize the path of fire, this approach enables teams to validate system architecture from the outset while establishing clear development patterns.
+
+### Key Components
+1. Architectural Layers
+   - UI Layer (Frontend Interface)
+   - Business Logic Layer (Backend Processing)
+   - Data Access Layer (Service Integration)
+   - Database Layer (Data Storage)
+
+2. Development Flow
+   ```
+   Phase 1: Minimal Setup → UI + API + Database
+   Phase 2: Path Validation → End-to-End Testing
+   Phase 3: Feature Expansion → Incremental Complexity
+   ```
+
+### Benefits
+1. Technical Advantages
+   - Early architectural validation
+   - Reduced integration risks
+   - Clear development patterns
+   - Performance baseline establishment
+
+2. Project Benefits
+   - Accelerated prototype development
+   - Early stakeholder feedback
+   - Reduced technical debt
+   - Clearer progress metrics
+
+## 🏛️ Clean Architecture
+
+![clean architecture]([https://miro.medium.com/v2/resize:fit:1438/1*ZNT5apOxDzGrTKUJQAIcvg.png](https://www.lambdatest.com/dynamic-pages/resources…-hub/software-development-clean-architecture.webp))
+
+### Overview
+Clean Architecture is a software design philosophy that separates concerns into distinct layers, making the system more maintainable, testable, and independent of external frameworks or tools. It emphasizes the separation of business logic from delivery mechanisms and databases.
+
+### Directory Structure
+
+```plaintext
+wfm-be/
+├── Cargo.toml               # Main configuration file for the Rust project
+├── Cargo.lock               # Dependency lock file
+├── .env                     # Environment configuration file
+├── README.md                # Project documentation
+└── src/
+    ├── main.rs              # Application entry point
+    ├── lib.rs               # Shared module file (optional)
+    │
+    ├── dtos/                # Data Transfer Objects (interface adapters)
+    │   ├── mod.rs           # Main module for DTOs
+    │   ├── requests/        # Request data (input)
+    │   │   ├── mod.rs       # Main module for request DTOs
+    │   │   ├── user/        # DTOs for user-related features
+    │   │   │   ├── mod.rs
+    │   │   │   ├── create_user_request.rs
+    │   │   │   └── update_user_request.rs
+    │   │   └── project/     # DTOs for project-related features
+    │   │       ├── mod.rs
+    │   │       ├── create_project_request.rs
+    │   │       └── update_project_request.rs
+    │   │
+    │   └── responses/       # Response data (output)
+    │       ├── mod.rs       # Main module for response DTOs
+    │       ├── user/        # DTOs for user responses
+    │       │   ├── mod.rs
+    │       │   ├── user_response.rs
+    │       │   └── user_list_response.rs
+    │       └── common/      # DTOs for common responses
+    │           ├── mod.rs
+    │           ├── api_response.rs
+    │           └── pagination_response.rs
+    │
+    ├── models/              # Domain models/entities (core business logic)
+    │   ├── mod.rs           # Main module for entities
+    │   ├── user.rs
+    │   ├── project.rs
+    │   ├── work_order.rs
+    │   └── common.rs        # Common entities (e.g., statuses, enums)
+    │
+    ├── repositories/        # Repository layer (interface adapters)
+    │   ├── mod.rs           # Main module for repositories
+    │   ├── traits/          # Interfaces for repositories
+    │   │   ├── mod.rs
+    │   │   ├── user_repository.rs
+    │   │   └── project_repository.rs
+    │   │
+    │   └── impls/           # Repository implementations
+    │       ├── mod.rs
+    │       ├── user_repository_impl.rs
+    │       └── project_repository_impl.rs
+    │
+    ├── services/            # Service/UseCase layer (application logic)
+    │   ├── mod.rs           # Main module for services
+    │   ├── traits/          # Interfaces for services
+    │   │   ├── mod.rs
+    │   │   ├── user_service.rs
+    │   │   └── project_service.rs
+    │   │
+    │   └── impls/           # Service implementations
+    │       ├── mod.rs
+    │       ├── user_service_impl.rs
+    │       └── project_service_impl.rs
+    │
+    ├── handlers/            # Handler/Controller layer (interface adapters)
+    │   ├── mod.rs           # Main module for handlers
+    │   ├── user_handler.rs  # Handler for user-related features
+    │   └── project_handler.rs # Handler for project-related features
+    │
+    ├── config/              # Configuration layer (framework and drivers)
+    │   ├── mod.rs           # Main configuration module
+    │   └── app_config.rs    # Application configurations (e.g., DB, API)
+    │
+    ├── middleware/          # Middleware components (framework and drivers)
+    │   ├── mod.rs           # Main module for middleware
+    │   └── auth.rs          # Authentication middleware
+    │
+    └── utils/               # Utilities and helpers (framework and drivers)
+        ├── mod.rs           # Main module for utilities
+        ├── errors.rs        # Error handling utilities
+        └── constants.rs     # Global constants
+```
+
+_Explanation:_
+- **`dtos/`**: Handles input (requests) and output (responses) data transfer between layers.  
+- **`models/`**: Represents core business entities and domain objects.  
+- **`repositories/`**: Abstraction for data access and manipulation, such as database queries.  
+- **`services/`**: Contains business logic and application rules (use cases).  
+- **`handlers/`**: API entry points or interaction interfaces for external clients.  
+- **`config/`**: Application and infrastructure configurations.  
+- **`middleware/`**: Cross-cutting concerns like authentication or logging.  
+- **`utils/`**: Helper functions and utilities for error handling and constants.
+     
 ---
 
 # Repository Management SOP
@@ -477,6 +616,8 @@ Fixes #123
 # Development Workflow SOP
 
 ## 🌿 Branch Management
+
+![branch flow](https://i.pinimg.com/originals/fa/09/a1/fa09a11671a481a577ebeb0abba3e340.png)
 
 ### Branch Types
 ```
