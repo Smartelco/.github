@@ -2,31 +2,45 @@
 
 This repository serves as the central hub for Smartelco's operational guidelines, development standards, and project workflows. It is designed to ensure consistency, efficiency, and quality across all projects within the organization. By following these SOPs, team members can collaborate effectively and maintain high standards in code quality, project management, and delivery.
 
-## 📑 Table of Contents  
+# 📑 Table of Contents  
 
 1. [🏢 Organization Overview](#organization-overview)  
    - [About Smartelco](#-about-smartelco)  
    - [Team Structure](#-team-structure)  
    - [Development Philosophy](#-development-philosophy)  
+
 2. [📂 Repository Management SOP](#repository-management-sop)  
-   - [Repository Naming Convention](#-repository-naming-convention)  
+   - [Repository Naming Convention](#-repository-naming-convention)
    - [Repository Structure](#-repository-structure)  
    - [Required Documentation](#-required-documentation)  
-3. [📊 Project Management SOP](#project-management-sop)  
+
+3. [🎯 Milestone Management SOP](#milestone-management-sop)
+   - [Milestone Overview](#milestone-overview)
+   - [Milestone Types](#milestone-types)
+   - [Naming Conventions](#naming-conventions)
+   - [Milestone Structure](#milestone-structure)
+   - [Templates & Examples](#templates--examples)
+
+4. [📊 Project Management SOP](#project-management-sop)  
    - [Project Board Structure](#-project-board-structure)  
    - [Issue Management](#-issue-management)  
    - [Pull Request Process](#-pull-request-process)  
-4. [🔄 Development Workflow SOP](#development-workflow-sop)  
+
+5. [🔄 Development Workflow SOP](#development-workflow-sop)  
    - [Branch Management](#-branch-management)  
    - [Commit Guidelines](#-commit-guidelines)  
-5. [✅ Code Review & Quality SOP](#code-review--quality-sop)  
+
+6. [✅ Code Review & Quality SOP](#code-review--quality-sop)  
    - [Review Process](#-review-process)  
    - [Testing Requirements](#-testing-requirements)  
-6. [🚀 Release Management SOP](#release-management-sop)  
+
+7. [🚀 Release Management SOP](#release-management-sop)  
    - [Version Control](#-version-control)  
    - [Release Checklist](#-release-checklist)  
-7. [📚 Additional Resources](#-additional-resources)  
-8. [📅 Meeting Schedule](#-meeting-schedule) 
+
+8. [📚 Additional Resources](#-additional-resources)  
+
+9. [📅 Meeting Schedule](#-meeting-schedule) 
 
 ---
 
@@ -353,6 +367,33 @@ Environment:
 [Screenshots, diagrams, or additional information]
 ```
 
+_Example:_
+
+```markdown
+Title: feat: Implement JWT Authentication System
+
+### Overview
+Implement JWT-based authentication system for the WFM backend API
+
+### Acceptance Criteria
+- [ ] JWT token generation on successful login
+- [ ] Token validation middleware
+- [ ] Refresh token mechanism
+- [ ] Token revocation endpoint
+- [ ] Rate limiting for auth endpoints
+
+### Technical Specifications
+Environment:
+- Rust version: 1.70.0
+- Database: PostgreSQL 14
+- Dependencies: 
+  - jsonwebtoken = "8.1"
+  - actix-web = "4.0"
+
+### Additional Context
+See authentication flow diagram in docs/architecture/auth-flow.png
+```
+
 ## 🔄 Pull Request Process
 
 ### PR Naming Convention
@@ -396,6 +437,41 @@ Examples:
 Fixes #[issue-number]
 ```
 
+_Example:_
+```markdown
+Title: feat: Add JWT Authentication (#123)
+
+### 🎯 Purpose
+Implements JWT-based authentication system for secure API access
+
+### 🔄 Changes Made
+- Added JWT token generation in auth service
+- Created authentication middleware
+- Implemented token refresh mechanism
+- Added token revocation endpoint
+- Added rate limiting for auth endpoints
+
+### 🧪 Testing
+- [x] Unit tests for token generation/validation
+- [x] Integration tests for auth endpoints
+- [x] Load testing for rate limiting
+- [x] Manual testing completed
+
+### 📝 Documentation
+- [x] Added API documentation for auth endpoints
+- [x] Updated README with auth setup instructions
+- [x] Added authentication flow diagram
+
+### 🔍 Review Checklist
+- [x] Code follows Rust style guidelines
+- [x] Error handling implemented for all cases
+- [x] Logging added for security events
+- [x] Security best practices followed
+
+Fixes #123
+```
+
+
 ---
 
 # Development Workflow SOP
@@ -411,9 +487,15 @@ Main Branches:
 
 Feature Branches:
 - feature/    # New features
-- bugfix/     # Bug fixes
-- hotfix/     # Emergency fixes
-- release/    # Release preparation
+- bugfix/     # Bug fixes found during development or testing
+- hotfix/     # Emergency fixes for production issues
+- release/    # Release preparation (testing, final touches)
+- experiment/ # Experimental ideas or prototypes
+- support/    # Support for legacy systems or specific use cases
+- chore/      # Minor tasks like dependency updates or refactoring
+- docs/       # Documentation improvements or additions
+- test/       # Testing or creating test scenarios
+
 ```
 
 ### Branch Naming
@@ -428,6 +510,19 @@ Examples:
 ❌ new-feature
 ❌ fix-bug
 ❌ update
+```
+
+### Example
+
+```bash
+# Feature Branch
+git checkout -b feature/123-jwt-authentication
+
+# Bugfix Branch
+git checkout -b bugfix/456-token-expiration
+
+# Hotfix Branch
+git checkout -b hotfix/789-security-vulnerability
 ```
 
 ## 💬 Commit Guidelines
@@ -455,6 +550,8 @@ Examples:
 🛠️ chore    : Maintenance tasks
 ```
 
+_Folow the [semantic commit message](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)_
+
 ### Examples with Issue References
 
 #### ✅ Good Examples
@@ -476,6 +573,24 @@ Improved query performance for user lookup operations
 
 🧪 test: Add integration tests for auth system #202
 Added comprehensive test suite for authentication flow
+```
+
+_Git Example:_
+```bash
+# Feature Commit
+git commit -m "🚀 feat: Implement JWT token generation #123
+
+Added JWT token generation with the following features:
+- Token signing with RS256
+- Claims validation
+- Expiration handling
+- Refresh token support"
+
+# Bug Fix Commit
+git commit -m "🐛 fix: Resolve token expiration timezone issue fixes #456"
+
+# Documentation Commit
+git commit -m "📚 docs: Update authentication API documentation #789"
 ```
 
 #### ❌ Bad Examples
@@ -524,31 +639,6 @@ Example:
 - Always include issue number for trackability
 - Use appropriate closing keywords when applicable
 - Multiple issues should be space-separated
-
-#### 4. Structured Format
-```
-[type]: Action description #issue-number
-
-Why:
-- Reason for change
-- Context if needed
-
-What:
-- Specific change 1
-- Specific change 2
-
-Example:
-🚀 feat: Implement user roles system #123
-
-Why:
-- Required for permission management
-- Supports upcoming features
-
-What:
-- Add role model and migration
-- Implement role assignment
-- Add role validation middleware
-```
 
 ### Common Patterns
 
