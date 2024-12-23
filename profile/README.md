@@ -101,7 +101,7 @@ Tracer Bullet Development is a methodological approach that focuses on building 
 
 ## 🏛️ Clean Architecture
 
-![clean architecture]([https://miro.medium.com/v2/resize:fit:1438/1*ZNT5apOxDzGrTKUJQAIcvg.png](https://www.lambdatest.com/dynamic-pages/resources…-hub/software-development-clean-architecture.webp))
+![](https://github.com/Smartelco/.github/blob/main/assets/images/software-development-clean-architecture.png)
 
 ### Overview
 Clean Architecture is a software design philosophy that separates concerns into distinct layers, making the system more maintainable, testable, and independent of external frameworks or tools. It emphasizes the separation of business logic from delivery mechanisms and databases.
@@ -201,7 +201,94 @@ _Explanation:_
 - **`config/`**: Application and infrastructure configurations.  
 - **`middleware/`**: Cross-cutting concerns like authentication or logging.  
 - **`utils/`**: Helper functions and utilities for error handling and constants.
-     
+
+## **Overview of MVVM Architecture**
+
+The **MVVM (Model-View-ViewModel)** architecture divides the application into three main layers: **Model**, **ViewModel**, and **View**. This pattern facilitates a clean separation of concerns, making the application more maintainable, testable, and scalable.
+
+### **Layers Overview**
+
+1. **Model Layer**:
+   - Represents the **data layer** of the application.
+   - Responsible for defining business logic, interacting with APIs, and managing application state independent of the UI.
+   - Examples:
+     - **Data Models:** `UserModel`, `ProjectModel`.
+     - **API Layer:** Handles HTTP requests, such as `api/userApi.ts`.
+
+2. **ViewModel Layer**:
+   - Acts as a **bridge between the Model and the View**.
+   - Contains state and logic that the View consumes.
+   - Processes data from the Model to make it View-friendly.
+   - Examples:
+     - **State Management:** Exposes observables and methods like `useUser`.
+     - **Custom Hooks:** Encapsulate logic, such as `loadUsers` in `useUser`.
+
+3. **View Layer**:
+   - Represents the **UI layer** of the application.
+   - Displays data from the ViewModel and updates automatically when the ViewModel state changes.
+   - Example:
+     - Components like `UserView` render the UI and bind directly to ViewModel data.
+
+### Directory Structure
+
+```plaintext
+solidjs-mvvm/
+├── public/                      # Static assets
+├── src/                         # Application source code
+│   ├── models/                  # Model layer
+│   │   ├── UserModel.ts         # Represents the user data and logic
+│   │   ├── ProjectModel.ts      # Represents the project data and logic
+│   │   └── api/                 # API layer for network requests
+│   │       ├── apiClient.ts     # HTTP client setup (e.g., Axios)
+│   │       └── userApi.ts       # API calls for user data
+│   │
+│   ├── viewmodels/              # ViewModel layer
+│   │   ├── UserViewModel.ts     # Manages user-related state and logic
+│   │   ├── ProjectViewModel.ts  # Manages project-related state and logic
+│   │   └── hooks/               # Custom hooks to connect View to ViewModel
+│   │       ├── useUser.ts       # Hook for user logic
+│   │       └── useProject.ts    # Hook for project logic
+│   │
+│   ├── views/                   # View layer
+│   │   ├── UserView.tsx         # Displays user data
+│   │   ├── ProjectView.tsx      # Displays project data
+│   │   └── components/          # Reusable UI components
+│   │       ├── Button.tsx       # Example: Button component
+│   │       └── InputField.tsx   # Example: Input field component
+│   │
+│   ├── services/                # Shared services
+│   │   ├── AuthService.ts       # Handles authentication
+│   │   └── LoggerService.ts     # Handles logging
+│   │
+│   ├── store/                   # Centralized state management
+│   │   ├── index.ts             # Store setup using SolidJS's createStore
+│   │   └── slices/              # State slices
+│   │       ├── userSlice.ts     # User-specific state
+│   │       └── projectSlice.ts  # Project-specific state
+│   │
+│   ├── routes/                  # Routing configuration
+│   │   ├── index.tsx            # Defines app routes
+│   │   └── ProtectedRoute.tsx   # Wrapper for protected routes
+│   │
+│   ├── config/                  # Application configuration
+│   │   ├── AppConfig.ts         # Environment variables and global settings
+│   │   └── mod.ts               # Module entry point
+│   │
+│   ├── middleware/              # Middleware utilities
+│   │   └── auth.ts              # Authentication middleware
+│   │
+│   ├── utils/                   # Shared utilities
+│   │   ├── errors.ts            # Error handling utilities
+│   │   ├── constants.ts         # Application-wide constants
+│   │   └── helpers.ts           # Helper functions
+│   │
+│   ├── App.tsx                  # Root component
+│   └── main.tsx                 # Application entry point
+├── .env                         # Environment variables
+├── .gitignore                   # Git ignore file
+├── package.json                 # Node.js dependencies and scripts
+├── tsconfig.json                # TypeScript configuration
+└── vite.config.ts               # Vite configuration
 ---
 
 # Repository Management SOP
