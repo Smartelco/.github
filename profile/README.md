@@ -1,12 +1,32 @@
-# 📘 Smartelco - Standard Operating Procedures
+# 🏬 Smartelco - Standard Operating Procedures
 
-# Table of Contents
-1. [Organization Overview](#organization-overview)
-2. [Repository Management SOP](#repository-management-sop)
-3. [Project Management SOP](#project-management-sop)
-4. [Development Workflow SOP](#development-workflow-sop)
-5. [Code Review & Quality SOP](#code-review--quality-sop)
-6. [Release Management SOP](#release-management-sop)
+This repository serves as the central hub for Smartelco's operational guidelines, development standards, and project workflows. It is designed to ensure consistency, efficiency, and quality across all projects within the organization. By following these SOPs, team members can collaborate effectively and maintain high standards in code quality, project management, and delivery.
+
+## 📑 Table of Contents  
+
+1. [🏢 Organization Overview](#organization-overview)  
+   - [About Smartelco](#-about-smartelco)  
+   - [Team Structure](#-team-structure)  
+   - [Development Philosophy](#-development-philosophy)  
+2. [📂 Repository Management SOP](#repository-management-sop)  
+   - [Repository Naming Convention](#-repository-naming-convention)  
+   - [Repository Structure](#-repository-structure)  
+   - [Required Documentation](#-required-documentation)  
+3. [📊 Project Management SOP](#project-management-sop)  
+   - [Project Board Structure](#-project-board-structure)  
+   - [Issue Management](#-issue-management)  
+   - [Pull Request Process](#-pull-request-process)  
+4. [🔄 Development Workflow SOP](#development-workflow-sop)  
+   - [Branch Management](#-branch-management)  
+   - [Commit Guidelines](#-commit-guidelines)  
+5. [✅ Code Review & Quality SOP](#code-review--quality-sop)  
+   - [Review Process](#-review-process)  
+   - [Testing Requirements](#-testing-requirements)  
+6. [🚀 Release Management SOP](#release-management-sop)  
+   - [Version Control](#-version-control)  
+   - [Release Checklist](#-release-checklist)  
+7. [📚 Additional Resources](#-additional-resources)  
+8. [📅 Meeting Schedule](#-meeting-schedule) 
 
 ---
 
