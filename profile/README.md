@@ -7,40 +7,45 @@ This repository serves as the central hub for Smartelco's operational guidelines
 1. [🏢 Organization Overview](#organization-overview)  
    - [About Smartelco](#-about-smartelco)  
    - [Team Structure](#-team-structure)  
-   - [Development Philosophy](#-development-philosophy)  
-
-2. [📂 Repository Management SOP](#repository-management-sop)  
+   - [Development Philosophy](#-development-philosophy)
+     
+2. [🎯 Development Approach](#development-approach)
+   - [Tracer Bullet Development](#tracer-bullet-development)
+   - [Clean Architecture](#clean-architecture)
+   - [Overview of MVVM Architecture](#overview-of-mvvm-architecture)
+     
+3. [📂 Repository Management SOP](#repository-management-sop)  
    - [Repository Naming Convention](#-repository-naming-convention)
    - [Repository Structure](#-repository-structure)  
    - [Required Documentation](#-required-documentation)  
 
-3. [🎯 Milestone Management SOP](#milestone-management-sop)
+4. [🎯 Milestone Management SOP](#milestone-management-sop)
    - [Milestone Overview](#milestone-overview)
    - [Milestone Types](#milestone-types)
    - [Naming Conventions](#naming-conventions)
    - [Milestone Structure](#milestone-structure)
    - [Templates & Examples](#templates--examples)
 
-4. [📊 Project Management SOP](#project-management-sop)  
+5. [📊 Project Management SOP](#project-management-sop)  
    - [Project Board Structure](#-project-board-structure)  
    - [Issue Management](#-issue-management)  
    - [Pull Request Process](#-pull-request-process)  
 
-5. [🔄 Development Workflow SOP](#development-workflow-sop)  
+6. [🔄 Development Workflow SOP](#development-workflow-sop)  
    - [Branch Management](#-branch-management)  
    - [Commit Guidelines](#-commit-guidelines)  
 
-6. [✅ Code Review & Quality SOP](#code-review--quality-sop)  
+7. [✅ Code Review & Quality SOP](#code-review--quality-sop)  
    - [Review Process](#-review-process)  
    - [Testing Requirements](#-testing-requirements)  
 
-7. [🚀 Release Management SOP](#release-management-sop)  
+8. [🚀 Release Management SOP](#release-management-sop)  
    - [Version Control](#-version-control)  
    - [Release Checklist](#-release-checklist)  
 
-8. [📚 Additional Resources](#-additional-resources)  
+9. [📚 Additional Resources](#-additional-resources)  
 
-9. [📅 Meeting Schedule](#-meeting-schedule) 
+10. [📅 Meeting Schedule](#-meeting-schedule) 
 
 ---
 
@@ -202,7 +207,7 @@ _Explanation:_
 - **`middleware/`**: Cross-cutting concerns like authentication or logging.  
 - **`utils/`**: Helper functions and utilities for error handling and constants.
 
-## **Overview of MVVM Architecture**
+## Overview of MVVM Architecture
 
 The **MVVM (Model-View-ViewModel)** architecture divides the application into three main layers: **Model**, **ViewModel**, and **View**. This pattern facilitates a clean separation of concerns, making the application more maintainable, testable, and scalable.
 
@@ -289,6 +294,8 @@ solidjs-mvvm/
 ├── package.json                 # Node.js dependencies and scripts
 ├── tsconfig.json                # TypeScript configuration
 └── vite.config.ts               # Vite configuration
+```
+
 ---
 
 # Repository Management SOP
