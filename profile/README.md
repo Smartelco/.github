@@ -585,6 +585,14 @@ Examples:
 ### Overview
 [Clear, concise description]
 
+### Time Configuration
+time: HH:MM-HH:MM
+
+// Time Available:
+// 1. time: HH:MM-HH:MM       -> Specific time range
+// 2. time: full-day          -> Full day event
+// 3. Not Configuration Time  -> Full day event
+
 ### Acceptance Criteria
 - [ ] Specific requirement 1
 - [ ] Specific requirement 2
@@ -608,6 +616,9 @@ Title: feat: Implement JWT Authentication System
 ### Overview
 Implement JWT-based authentication system for the WFM backend API
 
+### Time Configuration
+time: 15:00-20:00
+
 ### Acceptance Criteria
 - [ ] JWT token generation on successful login
 - [ ] Token validation middleware
@@ -625,6 +636,14 @@ Environment:
 
 ### Additional Context
 See authentication flow diagram in docs/architecture/auth-flow.png
+```
+
+_Note for Calendar available Multiple assign with Issue Comment:_
+
+```markdown
+/assign  # Self-assignment
+/assign @username  # Assign specific user
+/assign @user1 @user2  # Multiple assignments
 ```
 
 ## 🔄 Pull Request Process
