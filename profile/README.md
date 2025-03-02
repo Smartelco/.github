@@ -55,7 +55,7 @@ Currently, we are focusing on manpower supply and development of Human Resource 
 ## 📍 Our Location
 <!-- For GitHub README, you can include a static map image with a link to Google Maps -->
 <a href="https://maps.app.goo.gl/xJa9PBKWtJXaN4oL8" target="_blank">
-  <img src="https://maps.googleapis.com/maps/api/staticmap?center=Jalan+Let.+Jen.+MT.+Haryono+Kav.+2-3+SOHO+Pancoran+Splendor&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7CJalan+Let.+Jen.+MT.+Haryono+Kav.+2-3+SOHO+Pancoran+Splendor&key=YOUR_API_KEY" alt="Smartelco Location" width="100%"/>
+  <img src="/assets/images/soho-map.png" alt="Smartelco Location" width="100%"/>
 </a>
 
 <!-- Note: Replace YOUR_API_KEY with an actual Google Maps API key, or use an alternative embed approach -->
